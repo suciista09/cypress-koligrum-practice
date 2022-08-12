@@ -1,6 +1,6 @@
 describe('Koligrum - fazztrack Cypress Practice', () => {
     it('Check dropdown value', function () {
-        cy.visit('https://b899-13-67-75-93.ngrok.io/')
+        cy.visit('/')
 
         cy.get('#colorSelect')
             //verify the dropdown is visible
@@ -22,7 +22,7 @@ describe('Koligrum - fazztrack Cypress Practice', () => {
     context('Create input', ()=>{
         const quotes = ["Quote White", "Quotes Yellow", "Quotes Cyna", "Quotes Magenta", "Quotes Blue"]
         before('Prepare quotes', ()=>{
-            cy.visit('https://b899-13-67-75-93.ngrok.io/')
+            cy.visit('/')
             //input quotes
 
 
@@ -79,33 +79,6 @@ describe('Koligrum - fazztrack Cypress Practice', () => {
             cy.get('#buttonShowTable').trigger('mouseover')
 
             cy.get('#tableQuote').should('be.visible')
-        })
-    })
-
-    context('Handling Alert', () => {
-        before('Insert maximum quotes', () => {
-            cy.visit('https://b899-13-67-75-93.ngrok.io/')
-
-            for (let i = 0; i < 12; i++) {
-                //type quote
-                cy.get('#inputQuote')
-                    .type("random" + i)
-
-                //select color
-                cy.get('#colorSelect')
-                    .select(0)
-
-                //click button
-                cy.get('#buttonAddQuote')
-                    .click()
-            }
-        })
-
-        it('Handling alert in cypress', ()=>{
-            /*cy.on('window:alert',(t)=>{
-                //assertions
-                expect(t).to.equal('Please delete Quotes first!xxxxx');
-            })*/
         })
     })
 
