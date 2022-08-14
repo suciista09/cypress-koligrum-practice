@@ -6,6 +6,7 @@ module.exports = defineConfig({
       // implement node event listeners here
 
     },
-    baseUrl: 'https://b899-13-67-75-93.ngrok.io'
+    baseUrl: 'https://b899-13-67-75-93.ngrok.io',
+    specPattern: ['**/test1.cy.js','**/testpo.cy.js']
   },
 });
